@@ -34,7 +34,7 @@ do
 
   echo -n " audio$url_pnt :" >> $dir/file_list.txt
 
-  annie.exe -i -o $dir -O audio$url_pnt $URL | grep "Title" >> $dir/file_list.txt
+  annie.exe -c ./Cookies.txt -i -o $dir -O audio$url_pnt $URL | grep "Title" | sed 's/Title://g' >> $dir/file_list.txt
 
   echo -e "\n\r" >> $dir/file_list.txt
 
