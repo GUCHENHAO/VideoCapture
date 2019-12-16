@@ -22,8 +22,6 @@ cp url.txt $dir/url.txt
 
 url_lst_len=${#URL_LST[*]}
 
-echo "Total Video Num: $url_lst_len"
-
 echo -e "file list: \n\r" > $dir/file_list.txt
 
 url_pnt=0
@@ -45,6 +43,8 @@ done
 url_pnt=0
 while [ $url_pnt -lt $url_lst_len ]
 do
+
+  echo -e "\n\r正在下载第$((url_pnt+1))个视频, 总共$url_lst_len个视频\n\r"
 
   URL=${URL_LST[ $((url_pnt + 0)) ]}
 
