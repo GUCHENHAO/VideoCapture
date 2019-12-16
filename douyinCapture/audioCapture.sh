@@ -32,7 +32,7 @@ do
 
   echo -n " audio$url_pnt :" >> $dir/file_list.txt
 
-  annie -i -o $dir -O audio$url_pnt $URL | grep "Title" | sed 's/Title://g' >> $dir/file_list.txt
+  annie.exe -i -o $dir -O audio$url_pnt $URL | grep "Title" | sed 's/Title://g' >> $dir/file_list.txt
 
   echo -e "\n\r" >> $dir/file_list.txt
 
@@ -48,9 +48,9 @@ do
 
   URL=${URL_LST[ $((url_pnt + 0)) ]}
 
-  annie -o $dir -O audio$url_pnt $URL
+  annie.exe -o $dir -O audio$url_pnt $URL
   
-  ffmpeg -i $dir/audio$url_pnt.mp4 $dir/audio$url_pnt.mp3
+  ffmpeg.exe -i $dir/audio$url_pnt.mp4 $dir/audio$url_pnt.mp3
 
   url_pnt=$((url_pnt + 1))
 
