@@ -1,5 +1,5 @@
 ﻿如何从B站抓取视频：
-1. 进入文件夹 youkuCapture 
+1. 打开文件夹 bilibiliCapture 
 2. 用记事本打开 url.txt 
 3. 替换想要抓取的视频链接 
 4. 双击 运行.bat
