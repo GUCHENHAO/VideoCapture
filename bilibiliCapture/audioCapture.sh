@@ -2,7 +2,7 @@
 
 cd ..
 git pull
-cd -
+cd - > /dev/null
 
 i=0
 while read line

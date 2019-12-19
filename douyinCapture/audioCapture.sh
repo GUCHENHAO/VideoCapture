@@ -2,7 +2,7 @@
 
 cd ..
 git pull
-cd -
+cd - > /dev/null
 
 i=0
 while read line
@@ -44,15 +44,14 @@ url_pnt=0
 while [ $url_pnt -lt $url_lst_len ]
 do
 
-  echo -e "\n\r正在下载第$((url_pnt+1))个视频, 总共$url_lst_len个视频"
+  echo -e "\n\r正在下载第$((url_pnt+1))个视频, 总共$url_lst_len个视频\n\r"
 
   URL=${URL_LST[ $((url_pnt + 0)) ]}
 
   annie.exe -o $dir -O audio$url_pnt $URL
-  
+
   ffmpeg.exe -i $dir/audio$url_pnt.mp4 $dir/audio$url_pnt.mp3
 
   url_pnt=$((url_pnt + 1))
 
 done
-
