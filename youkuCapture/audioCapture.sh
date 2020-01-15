@@ -50,7 +50,13 @@ do
 
   annie.exe -c ./Cookies.txt -o $dir -O audio$url_pnt $URL
   
-  ffmpeg.exe -i $dir/audio$url_pnt.mp4 $dir/audio$url_pnt.mp3
+  if [ -f "$dir/audio$url_pnt.mp4" ];then 
+    ffmpeg.exe -i $dir/audio$url_pnt.mp4 $dir/audio$url_pnt.mp3
+  fi
+
+  if [ -f "$dir/audio$url_pnt.flv" ];then 
+    ffmpeg.exe -i $dir/audio$url_pnt.flv $dir/audio$url_pnt.mp3
+  fi
 
   url_pnt=$((url_pnt + 1))
 
